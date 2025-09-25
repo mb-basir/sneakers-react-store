@@ -1,12 +1,68 @@
-# React + Vite
+# Sneakers React Store
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+An e-commerce sneakers store built with React, Vite, React Router, Context API, and Tailwind CSS. Product data is served using JSON Server.
 
-Currently, two official plugins are available:
+## Features
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+- Product listing with images, sizes, and colors
+- Product details page with selectable size, color, and quantity
+- Add to cart with unique cart item handling
+- Cart page with quantity adjustment and removal
+- Persistent global state using React Context
+- Responsive navbar and popup notifications
+- Modern UI with Tailwind CSS
 
-## Expanding the ESLint configuration
+## Getting Started
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+### 1. Install dependencies
+
+```bash
+npm install
+```
+
+### 2. Start the development server
+
+```bash
+npm run dev
+```
+
+### 3. Start the product API server
+
+```bash
+npm run server
+```
+
+This runs JSON Server at [http://localhost:8000/products](http://localhost:8000/products) using `public/data/products.json`.
+
+### 4. Open the app
+
+Visit [http://localhost:5173](http://localhost:5173) in your browser.
+
+## Folder Structure
+
+- `src/` - React source code
+  - `components/` - Reusable UI components (Navbar, Button, Popup, ProductDetails, etc.)
+  - `pages/` - Main pages (Homepage, ProductDetails, Cart, PageNotFound)
+  - `contexts/` - React Context for global state (StoreContext)
+- `public/data/products.json` - Product data for JSON Server
+- `public/images/` - Product images
+
+## Scripts
+
+- `npm run dev` - Start Vite dev server
+- `npm run server` - Start JSON Server for products
+- `npm run build` - Build for production
+- `npm run lint` - Lint code
+
+## Tech Stack
+
+- React 19
+- Vite
+- React Router DOM 7
+- Tailwind CSS
+- JSON Server
+- Context API
+
+---
+
+**Author:** mb-basir
