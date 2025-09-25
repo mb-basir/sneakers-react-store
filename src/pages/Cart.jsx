@@ -112,7 +112,7 @@ function Cart() {
                       <h3 className="inline-block bg-green-400 text-[12px] px-3 my-[1px] rounded-bl-lg rounded-tr-lg">
                         {item.quantity}*{item.price}
                       </h3>
-                      <h2 className="bg-red-300 text-center w-25  py-1 rounded-tr-2xl rounded-bl-2xl">
+                      <h2 className="bg-red-300 text-center w-25 py-1 rounded-tr-2xl rounded-bl-2xl">
                         {item.price * item.quantity} $
                       </h2>
                     </div>
@@ -123,6 +123,12 @@ function Cart() {
           </ul>
         )}
       </div>
+      {orders.length > 0 && (
+        <div className="bg-[#ceb4ea] mx-[10%] flex justify-center p-6 rounded-full mt-2 text-center">
+          <h1 className="text-center text-xl font-semibold">x items</h1>
+          <h1 className="text-center text-xl font-semibold">Total: x$</h1>
+        </div>
+      )}
     </div>
   );
 }
