@@ -1,0 +1,188 @@
+{
+  "products": [
+    {
+      "id": 1,
+      "name": "Running Shoes",
+      "price": 120,
+      "image": "images/artem-bondarchuk-XPBYi4K8vFI-unsplash.jpg",
+      "category": "Shoes",
+      "sizes": [38, 39, 40, 41, 42],
+      "colors": ["Red", "Blue", "Black"],
+      "stock": 10,
+      "description": "Lightweight running shoes for daily training.",
+      "totalSales": 0,
+      "productDetails": [
+        "Breathable mesh",
+        "Cushioned sole",
+        "Lightweight design"
+      ],
+      "deliveryFee": "Free Shipping"
+    },
+    {
+      "id": 2,
+      "name": "Sneakers",
+      "price": 90,
+      "image": "images/fujiphilm-QZxz3Q5lMDI-unsplash.jpg",
+      "category": "Shoes",
+      "sizes": [37, 38, 39, 40, 41],
+      "colors": ["White", "Gray"],
+      "stock": 15,
+      "description": "Casual sneakers for everyday use.",
+      "totalSales": 0,
+      "productDetails": ["Durable sole", "Soft cushioning"],
+      "deliveryFee": 5
+    },
+    {
+      "id": 3,
+      "name": "High-Top",
+      "price": 110,
+      "image": "images/imani-bahati-LxVxPA1LOVM-unsplash.jpg",
+      "category": "Shoes",
+      "sizes": [38, 39, 40, 41, 42],
+      "colors": ["Black", "Red"],
+      "stock": 8,
+      "description": "Stylish high-top sneakers for urban style.",
+      "totalSales": 0,
+      "productDetails": ["Ankle support", "Streetwear style", "Non-slip sole"],
+      "deliveryFee": 7
+    },
+    {
+      "id": 4,
+      "name": "Casual Loafers",
+      "price": 80,
+      "image": "images/irene-kredenets-dwKiHoqqxk8-unsplash.jpg",
+      "category": "Shoes",
+      "sizes": [39, 40, 41, 42, 43],
+      "colors": ["Brown", "Beige"],
+      "stock": 12,
+      "description": "Comfortable loafers for casual outings.",
+      "totalSales": 0,
+      "productDetails": ["Slip-on design", "Flexible sole"],
+      "deliveryFee": "Free Shipping"
+    },
+    {
+      "id": 5,
+      "name": "Formal Shoes",
+      "price": 130,
+      "image": "images/jeff-tumale-SD9Jyl1xNQ4-unsplash.jpg",
+      "category": "Shoes",
+      "sizes": [40, 41, 42, 43, 44],
+      "colors": ["Black", "Brown"],
+      "stock": 7,
+      "description": "Elegant formal shoes for office and events.",
+      "totalSales": 0,
+      "productDetails": [
+        "Premium leather",
+        "Classic design",
+        "Polished finish"
+      ],
+      "deliveryFee": 10
+    },
+    {
+      "id": 6,
+      "name": "Slip-On Shoes",
+      "price": 70,
+      "image": "images/maksim-larin-1vy2QcZd5FU-unsplash.jpg",
+      "category": "Shoes",
+      "sizes": [38, 39, 40, 41],
+      "colors": ["Blue", "Gray"],
+      "stock": 20,
+      "description": "Easy to wear slip-on shoes for casual comfort.",
+      "totalSales": 0,
+      "productDetails": ["Elastic sides", "Lightweight", "Flexible sole"],
+      "deliveryFee": 4
+    },
+    {
+      "id": 7,
+      "name": "Leather Boots",
+      "price": 150,
+      "image": "images/malvestida-DMl5gG0yWWY-unsplash.jpg",
+      "category": "Shoes",
+      "sizes": [40, 41, 42, 43],
+      "colors": ["Brown", "Black"],
+      "stock": 5,
+      "description": "Durable leather boots for outdoor and style.",
+      "totalSales": 0,
+      "productDetails": [
+        "Water-resistant",
+        "Durable outsole",
+        "Premium leather"
+      ],
+      "deliveryFee": "Free Shipping"
+    },
+    {
+      "id": 8,
+      "name": "Ankle Boots",
+      "price": 140,
+      "image": "images/ryan-plomp-jvoZ-Aux9aw-unsplash.jpg",
+      "category": "Shoes",
+      "sizes": [38, 39, 40, 41],
+      "colors": ["Black", "Beige"],
+      "stock": 6,
+      "description": "Modern ankle boots for trendy outfits.",
+      "totalSales": 0,
+      "productDetails": ["Zipper closure", "Comfortable lining"],
+      "deliveryFee": 6
+    },
+    {
+      "id": 9,
+      "name": "Sandals",
+      "price": 60,
+      "image": "images/sebastien-chiron-1LFXMyrFRNw-unsplash.jpg",
+      "category": "Shoes",
+      "sizes": [37, 38, 39, 40],
+      "colors": ["Brown", "White"],
+      "stock": 18,
+      "description": "Comfortable sandals for summer days.",
+      "totalSales": 0,
+      "productDetails": ["Light straps", "Breathable design"],
+      "deliveryFee": 3
+    },
+    {
+      "id": 10,
+      "name": "Flip Flops",
+      "price": 30,
+      "image": "images/shoes-6336173_1920.jpg",
+      "category": "Shoes",
+      "sizes": [37, 38, 39, 40],
+      "colors": ["Blue", "Black"],
+      "stock": 25,
+      "description": "Casual flip flops for beach and home use.",
+      "totalSales": 0,
+      "productDetails": ["Lightweight", "Water-resistant"],
+      "deliveryFee": "Free Shipping"
+    },
+    {
+      "id": 11,
+      "name": "Trail Running",
+      "price": 125,
+      "image": "images/the-dk-photography-NUoPWImmjCU-unsplash.jpg",
+      "category": "Shoes",
+      "sizes": [38, 39, 40, 41, 42],
+      "colors": ["Green", "Gray", "Black"],
+      "stock": 10,
+      "description": "Rugged shoes for trail running and outdoor sports.",
+      "totalSales": 0,
+      "productDetails": ["Grippy outsole", "Reinforced toe", "Breathable mesh"],
+      "deliveryFee": 8
+    },
+    {
+      "id": 12,
+      "name": "Basketball Sh",
+      "price": 140,
+      "image": "images/usama-akram-kP6knT7tjn4-unsplash.jpg",
+      "category": "Shoes",
+      "sizes": [40, 41, 42, 43, 44],
+      "colors": ["Red", "White", "Black"],
+      "stock": 9,
+      "description": "High-performance shoes for basketball players.",
+      "totalSales": 0,
+      "productDetails": [
+        "High ankle support",
+        "Shock absorption",
+        "Durable grip"
+      ],
+      "deliveryFee": "Free Shipping"
+    }
+  ]
+}
