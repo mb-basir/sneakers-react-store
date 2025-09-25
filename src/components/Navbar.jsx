@@ -11,9 +11,9 @@ function Navbar() {
           <LightDark />
           <Link to="/cart">
             CART{" "}
-            <viv className="bg-orange-500 text-white px-2 rounded-full inline-block ">
+            <div className="bg-orange-500 text-white px-2 rounded-full inline-block ">
               {orderSize}
-            </viv>
+            </div>
           </Link>
         </div>
       </div>
