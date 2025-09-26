@@ -1,12 +1,15 @@
 import { createContext, useContext, useEffect, useState } from "react";
 
 const StoreContext = createContext();
+
 function StoreProvider({ children }) {
   const [products, setProducts] = useState([]);
-  const [orders, setOrders] = useState([]);
+  const [orders, setOrders] = useState(() => {
+    // Load from localStorage if available
+    const saved = localStorage.getItem("orders");
+    return saved ? JSON.parse(saved) : [];
+  });
   const [quantity, setQuantity] = useState(1);
-  const orderSize = orders.length;
-  console.log(orderSize);
 
   useEffect(function () {
     async function store() {
@@ -20,6 +23,12 @@ function StoreProvider({ children }) {
     }
     store();
   }, []);
+
+  // Save orders to localStorage whenever orders change
+  useEffect(() => {
+    localStorage.setItem("orders", JSON.stringify(orders));
+  }, [orders]);
+
   return (
     <StoreContext.Provider
       value={{
@@ -28,7 +37,6 @@ function StoreProvider({ children }) {
         setOrders,
         quantity,
         setQuantity,
-        orderSize,
       }}
     >
       {children}

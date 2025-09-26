@@ -7,8 +7,8 @@ import ProductColors from "../components/ProductDetails/ProductColors";
 import ProductSizes from "../components/ProductDetails/ProductSizes";
 import ProductQuantity from "../components/ProductDetails/ProductQuantity";
 import ProductProperties from "../components/ProductDetails/ProductProperties";
-import { useState } from "react";
 import Popup from "../components/Popup";
+import { useState } from "react";
 
 function ProductDetails() {
   const navigate = useNavigate();
@@ -22,7 +22,6 @@ function ProductDetails() {
   const { orders, setOrders } = useReactStore();
   const [showPopup, setShowPopup] = useState(false);
 
-  console.log(id);
   return (
     <div>
       <Navbar />
@@ -55,6 +54,7 @@ function ProductDetails() {
                     name: item.name,
                     size: Number(size),
                     quantity: Number(quantity),
+                    total: +item.price * +quantity,
                     color: color,
                     image: item.image,
                   };
@@ -81,7 +81,6 @@ function ProductDetails() {
               {showPopup && (
                 <Popup
                   message="This item with the same size and color is already in your cart."
-                  new="public class FunctionalExceptionHandling"
                   onClose={() => setShowPopup(false)}
                 />
               )}
