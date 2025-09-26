@@ -1,7 +1,10 @@
+import { useReactStore } from "../../contexts/StoreContext";
 import Button from "../Button";
 import Stats from "./Stats";
 
 function Orders({ orders_in_cart, dispatch }) {
+  const { updateOrders } = useReactStore();
+
   return (
     <div className="bg-[#ceb4ea] mx-[10%] mt-30 rounded-4xl">
       {orders_in_cart.length === 0 ? (
@@ -39,6 +42,7 @@ function Orders({ orders_in_cart, dispatch }) {
                     <Button
                       onClick={() => {
                         console.log(orders_in_cart);
+                        updateOrders();
                         dispatch({ type: "dec", payload: item.id });
                       }}
                       size="sm"
@@ -67,6 +71,7 @@ function Orders({ orders_in_cart, dispatch }) {
                     </Button>
                     <Button
                       onClick={() => {
+                        updateOrders();
                         dispatch({ type: "delete", payload: item.id });
                       }}
                       className="ml-4"

@@ -11,6 +11,12 @@ function StoreProvider({ children }) {
   });
   const [quantity, setQuantity] = useState(1);
 
+  // ✅ helper function to update state + localStorage
+  function updateOrders(newOrders) {
+    setOrders(newOrders);
+    localStorage.setItem("orders", JSON.stringify(newOrders));
+  }
+
   useEffect(function () {
     async function store() {
       try {
@@ -37,6 +43,7 @@ function StoreProvider({ children }) {
         setOrders,
         quantity,
         setQuantity,
+        updateOrders,
       }}
     >
       {children}
