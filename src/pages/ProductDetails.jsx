@@ -69,7 +69,7 @@ function ProductDetails() {
                   if (isOrderExist) {
                     setShowPopup(true);
                   } else {
-                    navigate(`/cart`);
+                    navigate(-1);
                     setQuantity(1);
                     setOrders(() => [...orders, newOrder]);
                     console.log(orders);

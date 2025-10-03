@@ -11,6 +11,7 @@ function StoreProvider({ children }) {
   });
   const [quantity, setQuantity] = useState(1);
 
+  const orderSize = orders?.length;
   // ✅ helper function to update state + localStorage
   function updateOrders(newOrders) {
     setOrders(newOrders);
@@ -44,6 +45,7 @@ function StoreProvider({ children }) {
         quantity,
         setQuantity,
         updateOrders,
+        orderSize,
       }}
     >
       {children}
