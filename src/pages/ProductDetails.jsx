@@ -22,6 +22,36 @@ function ProductDetails() {
   const { orders, setOrders } = useReactStore();
   const [showPopup, setShowPopup] = useState(false);
 
+  function handleAddOrders(item) {
+    const newOrder = {
+      id: crypto.randomUUID(),
+      productId: item.id,
+      price: Number(item.price),
+      name: item.name,
+      size: Number(size),
+      quantity: Number(quantity),
+      total: +item.price * +quantity,
+      color: color,
+      image: item.image,
+    };
+
+    const isOrderExist = orders.find(
+      (item) =>
+        item.productId === newOrder.productId &&
+        item.size === newOrder.size &&
+        item.color === newOrder.color
+    );
+
+    if (isOrderExist) {
+      setShowPopup(true);
+    } else {
+      navigate(-1);
+      setQuantity(1);
+      setOrders(() => [...orders, newOrder]);
+      console.log(orders);
+    }
+  }
+
   return (
     <div>
       <Navbar />
@@ -46,35 +76,7 @@ function ProductDetails() {
                 className="block "
                 variant="danger"
                 disabled={!size || !color}
-                onClick={() => {
-                  const newOrder = {
-                    id: crypto.randomUUID(),
-                    productId: item.id,
-                    price: Number(item.price),
-                    name: item.name,
-                    size: Number(size),
-                    quantity: Number(quantity),
-                    total: +item.price * +quantity,
-                    color: color,
-                    image: item.image,
-                  };
-
-                  const isOrderExist = orders.find(
-                    (item) =>
-                      item.productId === newOrder.productId &&
-                      item.size === newOrder.size &&
-                      item.color === newOrder.color
-                  );
-
-                  if (isOrderExist) {
-                    setShowPopup(true);
-                  } else {
-                    navigate(-1);
-                    setQuantity(1);
-                    setOrders(() => [...orders, newOrder]);
-                    console.log(orders);
-                  }
-                }}
+                onClick={() => handleAddOrders(item)}
               >
                 Add to Cart
               </Button>

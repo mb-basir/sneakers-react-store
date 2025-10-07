@@ -42,7 +42,7 @@ function Items({ item }) {
               variant="secondary"
               className="px-7 rounded-2xl"
               onClick={() => {
-                navigate(`/product?id=${item.id}`); // for passing the product item to ProductDetails Page
+                navigate(`/product_details?id=${item.id}`); // for passing the product item to ProductDetails Page
               }}
             >
               More info ➡️

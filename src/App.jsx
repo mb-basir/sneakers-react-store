@@ -11,8 +11,8 @@ function App() {
       <BrowserRouter>
         <Routes>
           <Route path="/" element={<Products />} />
-          <Route path="product" element={<Products />} />
-          <Route path="/product" element={<ProductDetails />} />
+          <Route path="/product" element={<Products />} />
+          <Route path="/product_details" element={<ProductDetails />} />
           <Route path="/cart" element={<Cart />} />
           <Route path="*" element={<PageNotFound />} />
         </Routes>
