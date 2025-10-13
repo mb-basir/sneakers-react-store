@@ -1,65 +1,88 @@
 import { useState } from "react";
-import { motion, AnimatePresence } from "framer-motion";
+import { motion } from "framer-motion";
 
 function Search() {
   const [active, setActive] = useState(false);
 
   return (
-    <div className="flex items-center justify-center">
+    <motion.div
+      className="flex items-center justify-center"
+      initial={false}
+      animate={{
+        width: active ? 260 : 48,
+        backgroundColor: active ? "rgb(99 102 241)" : "rgb(129 140 248)",
+        borderRadius: active ? "9999px" : "9999px",
+      }}
+      transition={{
+        duration: 0.35,
+        ease: [0.4, 0, 0.2, 1],
+      }}
+      style={{
+        overflow: "visible",
+        padding: "0.5rem",
+        display: "flex",
+        alignItems: "center",
+        gap: "0.5rem",
+      }}
+    >
+      {/* Search Icon */}
       <motion.div
-        layout
-        transition={{ layout: { duration: 0.4, ease: "easeInOut" } }}
-        className={`flex items-center gap-2 bg-indigo-400 p-2 rounded-full ${
-          active ? "w-64" : "w-10"
-        }`}
+        animate={{ opacity: active ? 0.6 : 1, scale: active ? 0.9 : 1 }}
+        transition={{ duration: 0.2 }}
       >
-        <motion.svg
-          key="icon"
+        <svg
           xmlns="http://www.w3.org/2000/svg"
           viewBox="0 0 30 30"
           width="22"
           height="22"
-          onClick={() => setActive((prev) => !prev)}
-          initial={{ rotate: 0 }}
-          animate={{ rotate: active ? 360 : 0 }}
-          transition={{ duration: 0.5 }}
+          fill="#fff"
         >
-          <path
-            d="M13 3C7.4889971 3 3 7.4889971 3 13C3 18.511003 7.4889971 23 13 23C15.396508 23 17.597385 22.148986 19.322266 20.736328L25.292969 26.707031 A 1.0001 1.0001 0 1 0 26.707031 25.292969L20.736328 19.322266C22.148986 17.597385 23 15.396508 23 13C23 7.4889971 18.511003 3 13 3 z M 13 5C17.430123 5 21 8.5698774 21 13C21 17.430123 17.430123 21 13 21C8.5698774 21 5 17.430123 5 13C5 8.5698774 8.5698774 5 13 5 z"
-            fill="#ffffff"
-          />
-        </motion.svg>
-
-        <AnimatePresence>
-          {active && (
-            <>
-              <motion.input
-                key="input"
-                type="text"
-                placeholder="Search..."
-                className="flex-1 bg-transparent outline-none text-white placeholder-white"
-                initial={{ opacity: 0, width: 0 }}
-                animate={{ opacity: 1, width: "100%" }}
-                exit={{ opacity: 0, width: 0 }}
-                transition={{ duration: 0.3 }}
-                autoFocus
-              />
-              <motion.button
-                key="close"
-                className="h-8 w-8 bg-indigo-500 rounded-full text-white flex items-center justify-center"
-                onClick={() => setActive(false)}
-                initial={{ opacity: 0, scale: 0.5 }}
-                animate={{ opacity: 1, scale: 1 }}
-                exit={{ opacity: 0, scale: 0.5 }}
-                transition={{ duration: 0.3 }}
-              >
-                ❌
-              </motion.button>
-            </>
-          )}
-        </AnimatePresence>
+          <path d="M13 3C7.489 3 3 7.489 3 13s4.489 10 10 10c2.397 0 4.598-.851 6.323-2.264l5.97 5.97a1 1 0 1 0 1.414-1.414l-5.97-5.97A9.963 9.963 0 0 0 23 13c0-5.511-4.489-10-10-10zM13 5c4.43 0 8 3.57 8 8s-3.57 8-8 8-8-3.57-8-8 3.57-8 8-8z" />
+        </svg>
       </motion.div>
-    </div>
+
+      {/* Input Field */}
+      {active && (
+        <motion.input
+          key="input"
+          type="text"
+          placeholder="Search"
+          autoFocus
+          onBlur={() => setActive(false)}
+          className="flex-1 bg-transparent outline-none text-white placeholder-white"
+          initial={{ opacity: 0, width: 0 }}
+          animate={{ opacity: 1, width: "100%" }}
+          exit={{ opacity: 0, width: 0 }}
+          transition={{ duration: 0.25 }}
+        />
+      )}
+
+      {/* X button (always visible when active) */}
+      {active && (
+        <motion.button
+          key="close"
+          onClick={() => setActive(false)}
+          whileTap={{ scale: 0.85 }}
+          className="h-8 w-8 bg-indigo-700 rounded-full text-white flex items-center justify-center"
+          initial={{ opacity: 0, scale: 0.8 }}
+          animate={{ opacity: 1, scale: 1 }}
+          exit={{ opacity: 0, scale: 0.8 }}
+          transition={{ duration: 0.25 }}
+        >
+          ✕
+        </motion.button>
+      )}
+
+      {/* Click overlay (when inactive) */}
+      {!active && (
+        <motion.button
+          key="activate"
+          className="absolute h-10 w-10 rounded-full"
+          onClick={() => setActive(true)}
+          style={{ background: "transparent" }}
+        />
+      )}
+    </motion.div>
   );
 }
 
