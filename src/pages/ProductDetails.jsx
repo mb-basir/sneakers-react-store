@@ -1,4 +1,4 @@
-import { useNavigate, useSearchParams } from "react-router-dom";
+import { useSearchParams } from "react-router-dom";
 import Navbar from "../components/Navbar";
 import Button from "../components/Button";
 import { useReactStore } from "../contexts/StoreContext";
@@ -9,9 +9,9 @@ import ProductQuantity from "../components/ProductDetails/ProductQuantity";
 import ProductProperties from "../components/ProductDetails/ProductProperties";
 import Popup from "../components/Popup";
 import { useState } from "react";
+import OrdersPopup from "../components/OrdersPopup";
 
 function ProductDetails() {
-  const navigate = useNavigate();
   const [searchParams] = useSearchParams();
   const url_id = searchParams.get("id");
   const [id, setId] = useState(null);
@@ -21,6 +21,7 @@ function ProductDetails() {
   const { products } = useReactStore();
   const { orders, setOrders } = useReactStore();
   const [showPopup, setShowPopup] = useState(false);
+  const [showOrdersPopup, setShowOrdersPopup] = useState(false);
 
   function handleAddOrders(item) {
     const newOrder = {
@@ -45,7 +46,8 @@ function ProductDetails() {
     if (isOrderExist) {
       setShowPopup(true);
     } else {
-      navigate(-1);
+      // navigate(-1);
+      setShowOrdersPopup(true);
       setQuantity(1);
       setOrders(() => [...orders, newOrder]);
       console.log(orders);
@@ -55,7 +57,6 @@ function ProductDetails() {
   return (
     <div>
       <Navbar />
-
       {products
         .filter((items) => +items.id === +url_id)
         .map((item) => (
@@ -84,6 +85,12 @@ function ProductDetails() {
                 <Popup
                   message="This item with the same size and color is already in your cart."
                   onClose={() => setShowPopup(false)}
+                />
+              )}
+              {showOrdersPopup && (
+                <OrdersPopup
+                  message="Your Orders Successfuly Added to Cart."
+                  onClose={() => setShowOrdersPopup(false)}
                 />
               )}
             </div>

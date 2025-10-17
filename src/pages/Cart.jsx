@@ -31,6 +31,8 @@ function reducer(state, action) {
     case "delete":
       return state.filter((item) => item.id !== action.payload);
 
+    case "clearCart":
+      return [];
     case "setQuantity":
       return state.map((item) =>
         item.id === action.payload.id
@@ -51,12 +53,12 @@ function Cart() {
   useEffect(() => {
     setOrders(orders_in_cart);
   }, [orders_in_cart, setOrders]);
-
+  console.log(orders_in_cart);
   return (
     <div>
       <Navbar />
       <Orders orders_in_cart={orders_in_cart} dispatch={dispatch} />
-      <Stats orders_in_cart={orders_in_cart} />
+      <Stats orders_in_cart={orders_in_cart} dispatch={dispatch} />
     </div>
   );
 }

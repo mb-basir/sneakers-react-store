@@ -4,6 +4,7 @@ import Cart from "./pages/Cart";
 import PageNotFound from "./pages/PageNotFound";
 import { StoreProvider } from "./contexts/StoreContext";
 import Products from "./pages/Products";
+import OrdersPopup from "./components/OrdersPopup";
 
 function App() {
   return (
@@ -14,6 +15,7 @@ function App() {
           <Route path="/product" element={<Products />} />
           <Route path="/product_details" element={<ProductDetails />} />
           <Route path="/cart" element={<Cart />} />
+          <Route path="/ser" element={<OrdersPopup />}></Route>
           <Route path="*" element={<PageNotFound />} />
         </Routes>
       </BrowserRouter>
