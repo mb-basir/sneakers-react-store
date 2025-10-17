@@ -5,8 +5,12 @@ import Search from "./Search";
 function Navbar() {
   const [searchParams] = useSearchParams();
   const location = useLocation();
-  const isHomepage = location.pathname === "/";
-  const isProductsPage =
+  const productsNav =
+    location.pathname === "/" ||
+    location.pathname === "/product_details" ||
+    location.pathname === "/cart";
+
+  const searchNav =
     location.pathname === "/product" || location.pathname === "/cart";
 
   console.log(searchParams);
@@ -15,10 +19,10 @@ function Navbar() {
     <div className="fixed top-0 left-0 w-full py-4 bg-white/1 backdrop-blur-md">
       <div className="bg-[#ceb4ea] mx-[10%] flex justify-between items-center px-6 py-2  rounded-full">
         <Link to="/">Logo</Link>
-        {isHomepage && <Link to="product">Products</Link>}
+        {productsNav && <Link to="/product">Products</Link>}
 
         <div className="flex items-center gap-4">
-          {isProductsPage && <Search />}
+          {searchNav && <Search />}
           <Link to="/cart" className="relative flex items-center">
             <img
               src="/images/icons8_add_shopping_cart_1.svg"

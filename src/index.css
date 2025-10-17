@@ -3,4 +3,15 @@ body {
   font-family: "Roboto mono";
   background-color: #decef0;
 }
-s
+/* Hide scrollbars globally */
+html,
+body {
+  overflow: -moz-scrollbars-none; /* For old Firefox */
+  -ms-overflow-style: none; /* For Internet Explorer, Edge */
+  scrollbar-width: none; /* For modern Firefox */
+}
+
+html::-webkit-scrollbar,
+body::-webkit-scrollbar {
+  display: none; /* For Chrome, Safari, Opera */
+}
