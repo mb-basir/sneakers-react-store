@@ -5,13 +5,14 @@ import PageNotFound from "./pages/PageNotFound";
 import { StoreProvider } from "./contexts/StoreContext";
 import Products from "./pages/Products";
 import OrdersPopup from "./components/OrdersPopup";
+import Homepage from "./pages/Homepage";
 
 function App() {
   return (
     <StoreProvider>
       <BrowserRouter>
         <Routes>
-          <Route path="/" element={<Products />} />
+          <Route path="/" element={<Homepage />} />
           <Route path="/product" element={<Products />} />
           <Route path="/product_details" element={<ProductDetails />} />
           <Route path="/cart" element={<Cart />} />
